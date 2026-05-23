@@ -113,74 +113,12 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
 };
 
-//   // SUBMIT
-//   const handleAdoptionRequest = async (e) => {
-//     e.preventDefault();
-
-// const res = await fetch("http://localhost:2080/request", {
-//     method: "POST",
-//     headers: {
-//       'Content-type': 'application/json'
-//     },
-//     body: JSON.stringify(requestData)
-//   })
-//   const data = await res.json()
-
-//   console.log(data);
-
-//     // guards
-//     if (!addPetNestDetail) return;
-//     if (!pickupDate) return alert("Please select pickup date");
-//     if (!user?.email) return alert("Login required");
-
-//     const requestData = {
-//       petId: _id,
-//       name,
-//       image,
-//       species,
-//       breed,
-//       adoptionFee,
-
-//       petRequestId: _id,
-
-//       userName: user?.name || "Unknown User",
-//       userEmail: user?.email,
-
-//       pickupDate,
-//       message,
-
-//       status: "Pending",
-//       canceled: false,
-
-//       requestedAt: new Date().toISOString(),
-//     };
-
-//     try {
-//       const res = await fetch("http://localhost:2080/adoptionRequests", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(requestData),
-//       });
-
-//       if (!res.ok) throw new Error("Request failed");
-
-//       const data = await res.json();
-
-//       if (data.insertedId) {
-//         router.push("/my-requests");
-//       }
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
 
   if (!addPetNestDetail) return null;
 
   return (
-    <div className="max-w-7xl mx-auto h-full">
-      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-xl sticky top-10">
+    <div className="max-w-7xl mx-auto h-full ">
+      <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-xl sticky top-10 ">
 
         {/* TITLE */}
         <div className="flex items-center gap-3 mb-4">

@@ -91,13 +91,13 @@ const PetDetailsPage = async ({ params }) => {
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 mt-6">
               
               <div>
-                <h1 className="text-3xl md:text-4xl font-extrabold">
+                <h1 className="text-3xl md:text-4xl font-extrabold ">
                   {addPetNestDetail.name}
                 </h1>
 
-                <div className="flex flex-wrap items-center gap-2 mt-3">
+                <div className="flex flex-wrap items-center gap-2 mt-3 ">
                   
-                  <span className="bg-pink-100 border border-pink-300 text-pink-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold">
+                  <span className="bg-pink-100 border border-pink-300 text-pink-600 px-3 py-1 rounded-full text-xs md:text-sm font-semibold ">
                     {addPetNestDetail.species}
                   </span>
 
@@ -158,7 +158,7 @@ const PetDetailsPage = async ({ params }) => {
               ].map((item, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-4 border border-pink-100 shadow-md hover:shadow-lg transition-all duration-300"
+                  className=" rounded-2xl p-4 border-pink-100 shadow-md hover:shadow-lg transition-all duration-300 bg-white dark:bg-[#111827] border  dark:border-gray-700"
                 >
                   <div className="flex items-center gap-2 text-pink-500 mb-2 text-lg">
                     {item.icon}
@@ -168,7 +168,7 @@ const PetDetailsPage = async ({ params }) => {
                     </p>
                   </div>
 
-                  <h3 className="text-lg font-bold">
+                  <h3 className="text-lg font-bold ">
                     {item.value}
                   </h3>
                 </div>
@@ -176,9 +176,9 @@ const PetDetailsPage = async ({ params }) => {
             </div>
 
             {/* DESCRIPTION */}
-            <div className="mt-8 bg-white rounded-2xl p-6 shadow-lg border border-pink-100">
+            <div className="mt-5  rounded-2xl p-6 shadow-lg border border-pink-100  md hover:shadow-lg transition-all duration-300 bg-white dark:bg-[#111827] dark:border-gray-700">
               
-              <h2 className="text-2xl font-bold mb-4">
+              <h2 className="text-2xl font-bold mb-4  text-black dark:text-white">
                 About {addPetNestDetail.name}
               </h2>
 

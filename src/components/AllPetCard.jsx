@@ -72,7 +72,7 @@ const AllPetNestCard = ({ addPetNest }) => {
       {/* CONTENT */}
       <div className="relative z-10 p-6">
 
-        <h2 className="text-3xl font-bold text-[#0f172a] mb-3">
+        <h2 className="text-3xl font-bold text-[#0f172a]  dark:text-gray-300  leading-7 mb-3">
           {name}
         </h2>
 
@@ -96,7 +96,7 @@ const AllPetNestCard = ({ addPetNest }) => {
 
           <HiOutlineCurrencyDollar className="text-pink-500 text-xl" />
 
-          <span className="text-2xl font-bold text-[#0f172a]">
+          <span className="text-3xl font-bold text-[#0f172a]  dark:text-gray-300  leading-7">
             ${adoptionFee}
           </span>
 
