@@ -91,13 +91,13 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
   return (
     <div className="max-w-7xl mx-auto h-full">
-      <div className=" dark:bg-[#111827] border border-gray-200 dark:border-gray-700 p-8 shadow-xl sticky top-10 rounded-2xl transition-all duration-300   text-black dark:text-white bg-white">
+      <div className=" dark:bg-[#111827] border border-gray-200 dark:border-gray-700 p-8 shadow-xl sticky top-10 rounded-2xl transition-all duration-300  bg-white">
 
         {/* TITLE */}
         <div className="flex items-center gap-3 mb-4">
           <MdOutlinePets className="text-pink-500 text-3xl" />
 
-          <h2 className="text-2xl font-bold text-black dark:text-white">
+          <h2 className="text-2xl font-bold">
             Request to Adopt {name}
           </h2>
         </div>
@@ -115,8 +115,8 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
           {/* PET NAME */}
           <div>
-              <label className="block mb-2 text-foreground  dark:text-white">
-                <h2 className="font-semibold dark:text-white text-black">
+              <label className="block mb-2 ">
+                <h2 className="font-semibold ">
               Pet Name
                 </h2>
             </label>
@@ -125,13 +125,13 @@ const RequestAdopt = ({ addPetNestDetail }) => {
               type="text"
               value={name}
               readOnly
-              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-5 py-3 outline-none text-black dark:text-white"
+              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-5 py-3 outline-none "
             />
           </div>
 
           {/* USER NAME */}
           <div>
-            <label className="block mb-2 font-semibold text-black dark:text-white text-sm">
+            <label className="block mb-2 font-semibold text-sm">
               Your Name
             </label>
 
@@ -142,14 +142,14 @@ const RequestAdopt = ({ addPetNestDetail }) => {
                 type="text"
                 value={user?.name || "Guest"}
                 readOnly
-                className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-12 py-3 outline-none text-black dark:text-white"
+                className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-12 py-3 outline-none"
               />
             </div>
           </div>
 
           {/* EMAIL */}
           <div>
-            <label className="block mb-2 font-semibold text-black dark:text-white text-sm">
+            <label className="block mb-2 font-semibold text-sm">
               Your Email
             </label>
 
@@ -160,14 +160,14 @@ const RequestAdopt = ({ addPetNestDetail }) => {
                 type="email"
                 value={user?.email || ""}
                 readOnly
-                className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-12 py-3 outline-none text-black dark:text-white"
+                className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-12 py-3 outline-none"
               />
             </div>
           </div>
 
           {/* PICKUP DATE */}
           <div>
-            <label className="block mb-2 font-semibold text-black dark:text-white text-sm">
+            <label className="block mb-2 font-semibold text-sm">
               Preferred Pickup Date
             </label>
 
@@ -175,13 +175,13 @@ const RequestAdopt = ({ addPetNestDetail }) => {
               type="date"
               value={pickupDate}
               onChange={(e) => setPickupDate(e.target.value)}
-              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-5 py-3 outline-none text-black dark:text-white color-scheme-light dark:color-scheme-dark"
+              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-full px-5 py-3 outline-none color-scheme-light dark:color-scheme-dark"
             />
           </div>
 
           {/* MESSAGE */}
           <div>
-            <label className="block mb-2 font-semibold text-black dark:text-white text-sm">
+            <label className="block mb-2 font-semibold text-sm">
               Message to Owner
             </label>
 
@@ -190,7 +190,7 @@ const RequestAdopt = ({ addPetNestDetail }) => {
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder={`Tell why you're perfect for ${name}...`}
-              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-2xl px-5 py-3 outline-none resize-none text-black dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-400"
+              className="w-full bg-gray-50 dark:bg-[#1f2937] border border-gray-300 dark:border-gray-600 rounded-2xl px-5 py-3 outline-none resize-none placeholder:text-gray-500 dark:placeholder:text-gray-400"
             />
           </div>
 

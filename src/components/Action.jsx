@@ -111,7 +111,7 @@ const Action = () => {
               Save Lives With Love
             </p>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-gray-900 dark:text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight ">
 
               Save A Pet <br />
 

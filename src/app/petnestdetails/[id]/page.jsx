@@ -9,16 +9,22 @@ import { FaPaw, FaDog, FaCat } from "react-icons/fa";
 import EditPetModal from "@/components/EditPetModal";
 import { DeletePetNestAlert } from "@/components/DeletePetNest";
 import RequestAdopt from "@/components/RequestAdopt";
+import { auth } from "@/lib/auth";
+import { headers } from "next/headers";
 
 const PetDetailsPage = async ({ params }) => {
   const { id } = await params;
+  const token = await auth.api.getToken({
+    headers: await headers()
+  })
+  console.log(token);
 
   const res = await fetch(
     // `${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail/${id}`,
    `http://localhost:2080/addPetNestDetail/${id}`,
     {
       headers:{
-        authorization: "logged in"
+        authorization: `Bearer ${token}`
       },
       cache: "no-store",
     }

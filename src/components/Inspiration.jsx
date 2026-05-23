@@ -97,7 +97,7 @@ const Inspiration = () => {
               Pet Adoption Inspiration
             </span>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8 text-gray-900 dark:text-white">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8">
 
               Find Your Perfect <br />
 

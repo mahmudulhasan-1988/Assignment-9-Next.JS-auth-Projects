@@ -4,9 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { usePathname } from "next/navigation";
+import { authClient } from "@/lib/auth-client";
 
 import NavLink from "./NavLink";
 import ThemeToggle from "./ThemeToggle";
+
 
 import {
   FiLogOut,
@@ -15,7 +17,7 @@ import {
   FiChevronDown,
 } from "react-icons/fi";
 
-import { authClient } from "@/lib/auth-client";
+
 
 const Navbar = () => {
 
