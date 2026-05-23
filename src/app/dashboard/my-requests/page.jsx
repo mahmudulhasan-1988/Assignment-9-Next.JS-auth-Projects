@@ -1,3 +1,5 @@
+
+
 import Link from "next/link";
 import { headers } from "next/headers";
 import { auth } from "@/lib/auth";
@@ -185,121 +187,253 @@ const MyAdoptionRequests = async () => {
 
             ) : (
 
-              <div className="overflow-x-auto rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e293b] shadow-2xl">
+              // <div className="overflow-x-auto rounded-3xl border   border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e293b] shadow-2xl">
 
-                <table className="w-full">
+              //   <table className="w-full">
 
-                  <thead className="bg-pink-50 dark:bg-[#0f172a]">
+              //     <thead className=" bg-pink-50">
 
-                    <tr>
+              //       <tr>
 
-                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
-                        Pet
-                      </th>
+              //         <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
+              //           Pet
+              //         </th>
 
-                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
-                        Pickup Date
-                      </th>
+              //         <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
+              //           Pickup Date
+              //         </th>
 
-                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
-                        Status
-                      </th>
+              //         <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
+              //           Status
+              //         </th>
 
-                      <th className="px-6 py-5 text-right text-black dark:text-white font-bold">
-                        Actions
-                      </th>
+              //         <th className="px-6 py-5 text-right text-black dark:text-white font-bold">
+              //           Actions
+              //         </th>
 
-                    </tr>
+              //       </tr>
 
-                  </thead>
+              //     </thead>
 
-                  <tbody>
+              //     <tbody>
 
-                    {
-                      requests.map((request) => (
+              //       {
+              //         requests.map((request) => (
 
-                        <tr
-                          key={request._id}
-                          className="border-t border-gray-200 dark:border-gray-700 hover:bg-pink-50/30 dark:hover:bg-[#0f172a] transition-all duration-300"
-                        >
+              //           <tr
+              //             key={request._id}
+              //             className="border-t border-gray-200 dark:border-gray-700 hover:bg-pink-50/30 dark:hover:bg-[#0f172a] transition-all duration-300"
+              //           >
 
-                          {/* PET */}
-                          <td className="px-6 py-5">
+              //             {/* PET */}
+              //             <td className="px-6 py-5">
 
-                            <div className="flex items-center gap-4">
+              //               <div className="flex items-center gap-4">
 
-                              <img
-                                src={request.petImage}
-                                alt={request.petName}
-                                className="w-16 h-16 rounded-2xl object-cover"
-                              />
+              //                 <img
+              //                   src={request.petImage}
+              //                   alt={request.petName}
+              //                   className="w-16 h-16 rounded-2xl object-cover"
+              //                 />
 
-                              <div>
+              //                 <div>
 
-                                <h2 className="font-bold text-lg text-black dark:text-white">
-                                  {request.petName}
-                                </h2>
+              //                   <h2 className="font-bold text-lg text-black dark:text-white">
+              //                     {request.petName}
+              //                   </h2>
 
-                                <p className="text-gray-500 dark:text-gray-300 text-sm">
-                                  {request.species} • {request.breed}
-                                </p>
+              //                   <p className="text-gray-500 dark:text-gray-300 text-sm">
+              //                     {request.species} • {request.breed}
+              //                   </p>
 
-                              </div>
+              //                 </div>
 
-                            </div>
+              //               </div>
 
-                          </td>
+              //             </td>
 
-                          {/* PICKUP */}
-                          <td className="px-6 py-5 text-gray-700 dark:text-gray-300">
-                            {request.pickupDate}
-                          </td>
+              //             {/* PICKUP */}
+              //             <td className="px-6 py-5 text-gray-700 dark:text-gray-300">
+              //               {request.pickupDate}
+              //             </td>
 
-                          {/* STATUS */}
-                          <td className="px-6 py-5">
+              //             {/* STATUS */}
+              //             <td className="px-6 py-5">
 
-                            <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-4 py-2 rounded-full text-sm font-semibold">
+              //               <span className="bg-yellow-100 dark:bg-yellow-900 text-yellow-700 dark:text-yellow-300 px-4 py-2 rounded-full text-sm font-semibold">
 
-                              {request.status}
+              //                 {request.status}
 
-                            </span>
+              //               </span>
 
-                          </td>
+              //             </td>
 
-                          {/* ACTIONS */}
-                          <td className="px-6 py-5">
+              //             {/* ACTIONS */}
+              //             <td className="px-6 py-5">
 
-                            <div className="flex items-center justify-end gap-3">
+              //               <div className="flex items-center justify-end gap-3">
 
-                              <Link href={`/petnestdetails/${request.petId}`}>
+              //                 <Link href={`/petnestdetails/${request.petId}`}>
 
-                                <button className="flex items-center gap-2 bg-gray-100 dark:bg-[#0f172a] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 px-5 py-2 rounded-full transition-all duration-300">
+              //                   <button className="flex items-center gap-2 bg-gray-100 dark:bg-[#0f172a] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 px-5 py-2 rounded-full transition-all duration-300">
 
-                                  <FiEye />
+              //                     <FiEye />
 
-                                  View
+              //                     View
 
-                                </button>
+              //                   </button>
 
-                              </Link>
+              //                 </Link>
 
-                               {/* CANCEL BUTTON */}
-                            <CancelButton request={request} />
+              //                  {/* CANCEL BUTTON */}
+              //               <CancelButton request={request} />
 
-                            </div>
+              //               </div>
 
-                          </td>
+              //             </td>
 
-                        </tr>
+              //           </tr>
 
-                      ))
-                    }
+              //         ))
+              //       }
 
-                  </tbody>
+              //     </tbody>
 
-                </table>
+              //   </table>
+
+              // </div>
+              <div className="overflow-x-auto rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e293b] shadow-2xl transition-all duration-300">
+
+  <table className="w-full text-black dark:text-white">
+
+    {/* TABLE HEAD */}
+    <thead className="bg-pink-50 dark:bg-[#0f172a]">
+
+      <tr>
+
+        <th className="px-6 py-5 text-left font-bold text-black dark:text-white">
+          Pet
+        </th>
+
+        <th className="px-6 py-5 text-left font-bold text-black dark:text-white">
+          Pickup Date
+        </th>
+
+        <th className="px-6 py-5 text-left font-bold text-black dark:text-white">
+          Status
+        </th>
+
+        <th className="px-6 py-5 text-right font-bold text-black dark:text-white">
+          Actions
+        </th>
+
+      </tr>
+
+    </thead>
+
+    {/* TABLE BODY */}
+    <tbody>
+
+      {
+        requests.map((request) => (
+
+          <tr
+            key={request._id}
+            className="border-t border-gray-200 dark:border-gray-700 hover:bg-pink-50 dark:hover:bg-[#0f172a] transition-all duration-300"
+          >
+
+            {/* PET */}
+            <td className="px-6 py-5">
+
+              <div className="flex items-center gap-4">
+
+                <img
+                  src={request.petImage}
+                  alt={request.petName}
+                  className="w-16 h-16 rounded-2xl object-cover border border-gray-200 dark:border-gray-700"
+                />
+
+                <div>
+
+                  <h2 className="font-bold text-lg text-black dark:text-white">
+
+                    {request.petName}
+
+                  </h2>
+
+                  <p className="text-black/70 dark:text-white/70 text-sm">
+
+                    {request.species} • {request.breed}
+
+                  </p>
+
+                </div>
 
               </div>
+
+            </td>
+
+            {/* PICKUP */}
+            <td className="px-6 py-5 text-black dark:text-white">
+
+              {request.pickupDate}
+
+            </td>
+
+            {/* STATUS */}
+            <td className="px-6 py-5">
+
+              <span
+                className={`px-4 py-2 rounded-full text-sm font-semibold ${
+                  request.status === "Approved"
+                    ? "bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300"
+                    : request.status === "Rejected"
+                    ? "bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-300"
+                    : "bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300"
+                }`}
+              >
+
+                {request.status}
+
+              </span>
+
+            </td>
+
+            {/* ACTIONS */}
+            <td className="px-6 py-5">
+
+              <div className="flex items-center justify-end gap-3">
+
+                {/* VIEW */}
+                <Link href={`/petnestdetails/${request.petId}`}>
+
+                  <button className="flex items-center gap-2 bg-gray-100 dark:bg-[#0f172a] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 px-5 py-2 rounded-full transition-all duration-300">
+
+                    <FiEye />
+
+                    View
+
+                  </button>
+
+                </Link>
+
+                {/* CANCEL BUTTON */}
+                <CancelButton request={request} />
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        ))
+      }
+
+    </tbody>
+
+  </table>
+
+</div>
 
             )
           }
