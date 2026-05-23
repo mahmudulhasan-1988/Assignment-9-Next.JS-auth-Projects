@@ -176,7 +176,7 @@ const PetDetailsPage = async ({ params }) => {
             </div>
 
             {/* DESCRIPTION */}
-            <div className="mt-5  rounded-2xl p-6 shadow-lg border border-pink-100  md hover:shadow-lg transition-all duration-300 bg-white dark:bg-[#111827] dark:border-gray-700">
+            <div className="mt-5  rounded-2xl p-6 shadow-lg border border-pink-100 md hover:shadow-lg transition-all duration-300 bg-white dark:bg-[#111827] dark:border-gray-700">
               
               <h2 className="text-2xl font-bold mb-4  text-black dark:text-white">
                 About {addPetNestDetail.name}

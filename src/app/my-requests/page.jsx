@@ -17,14 +17,13 @@ import CancelButton from "@/components/CancelButton";
 
 const MyAdoptionRequests = async () => {
 
-  // GET SESSION
+  // SESSION
   const session = await auth.api.getSession({
     headers: await headers(),
   });
 
   const userId = session?.user?.id;
 
-  // FETCH REQUESTS
   let requests = [];
 
   if (userId) {
@@ -35,14 +34,27 @@ const MyAdoptionRequests = async () => {
         cache: "no-store",
       }
     );
-
     const data = await res.json();
-
     requests = data.filter(
       (item) => item.canceled !== true
     );
 
   }
+
+  // STATS
+  const total = requests.length;
+
+  const pending = requests.filter(
+    (item) => item.status === "Pending"
+  ).length;
+
+  const approved = requests.filter(
+    (item) => item.status === "Approved"
+  ).length;
+
+  const rejected = requests.filter(
+    (item) => item.status === "Rejected"
+  ).length;
 
   return (
 
@@ -63,11 +75,8 @@ const MyAdoptionRequests = async () => {
 
         <FaCat className="absolute top-20 right-1/3 text-purple-200 dark:text-purple-800 text-7xl animate-bounce opacity-20" />
 
-        <FaDog className="absolute bottom-20 right-1/4 text-cyan-100 dark:text-cyan-800 text-7xl animate-pulse opacity-20" />
-
       </div>
 
-      {/* MAIN CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto">
 
         {/* HEADER */}
@@ -93,54 +102,110 @@ const MyAdoptionRequests = async () => {
 
           </h1>
 
+          <p className="text-gray-600 dark:text-gray-300 mt-4 text-lg">
+            Track the status of all your adoption requests here.
+          </p>
+
         </div>
 
-        {/* CONTENT */}
+        {/* STATS CARDS */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+
+          {/* TOTAL */}
+          <div className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 rounded-3xl p-8 text-center shadow-lg">
+
+            <h2 className="text-4xl font-extrabold text-black dark:text-white">
+              {total}
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              Total
+            </p>
+
+          </div>
+
+          {/* PENDING */}
+          <div className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 rounded-3xl p-8 text-center shadow-lg">
+
+            <h2 className="text-4xl font-extrabold text-yellow-500">
+              {pending}
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              Pending
+            </p>
+
+          </div>
+
+          {/* APPROVED */}
+          <div className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 rounded-3xl p-8 text-center shadow-lg">
+
+            <h2 className="text-4xl font-extrabold text-green-500">
+              {approved}
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              Approved
+            </p>
+
+          </div>
+
+          {/* REJECTED */}
+          <div className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 rounded-3xl p-8 text-center shadow-lg">
+
+            <h2 className="text-4xl font-extrabold text-red-500">
+              {rejected}
+            </h2>
+
+            <p className="text-gray-600 dark:text-gray-300 mt-2">
+              Rejected
+            </p>
+
+          </div>
+
+        </div>
+
+        {/* TABLE */}
         <div className="mt-12">
 
           {
             requests.length === 0 ? (
 
-              <div className="bg-white/90 dark:bg-[#1e293b]/90 backdrop-blur-md border border-pink-100 dark:border-gray-700 rounded-3xl min-h-[400px] flex flex-col items-center justify-center text-center shadow-2xl">
+              <div className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-gray-700 rounded-3xl py-20 text-center shadow-lg">
 
-                <div className="text-7xl mb-6 animate-bounce">
-                  🐾
-                </div>
-
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                  No Data Found
+                <h2 className="text-4xl font-bold text-black dark:text-white">
+                  No Requests Found 🐾
                 </h2>
 
-                <p className="text-gray-500 dark:text-gray-300 text-lg max-w-md">
-                  You haven't submitted any adoption request yet.
+                <p className="text-gray-500 dark:text-gray-300 mt-4 text-lg">
+                  You haven't submitted any request yet.
                 </p>
 
               </div>
 
             ) : (
 
-              <div className="overflow-x-auto rounded-3xl border border-pink-100 dark:border-gray-700 bg-white/90 dark:bg-[#1e293b]/90 backdrop-blur-md shadow-2xl">
+              <div className="overflow-x-auto rounded-3xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e293b] shadow-2xl">
 
                 <table className="w-full">
 
-                  {/* TABLE HEAD */}
                   <thead className="bg-pink-50 dark:bg-[#0f172a]">
 
                     <tr>
 
-                      <th className="px-6 py-5 text-left text-gray-700 dark:text-white font-bold">
+                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
                         Pet
                       </th>
 
-                      <th className="px-6 py-5 text-left text-gray-700 dark:text-white font-bold">
+                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
                         Pickup Date
                       </th>
 
-                      <th className="px-6 py-5 text-left text-gray-700 dark:text-white font-bold">
+                      <th className="px-6 py-5 text-left text-black dark:text-white font-bold">
                         Status
                       </th>
 
-                      <th className="px-6 py-5 text-right text-gray-700 dark:text-white font-bold">
+                      <th className="px-6 py-5 text-right text-black dark:text-white font-bold">
                         Actions
                       </th>
 
@@ -148,7 +213,6 @@ const MyAdoptionRequests = async () => {
 
                   </thead>
 
-                  {/* TABLE BODY */}
                   <tbody>
 
                     {
@@ -156,7 +220,7 @@ const MyAdoptionRequests = async () => {
 
                         <tr
                           key={request._id}
-                          className="border-t border-pink-50 dark:border-gray-700 hover:bg-pink-50/40 dark:hover:bg-[#0f172a] transition-all duration-300"
+                          className="border-t border-gray-200 dark:border-gray-700 hover:bg-pink-50/30 dark:hover:bg-[#0f172a] transition-all duration-300"
                         >
 
                           {/* PET */}
@@ -164,22 +228,16 @@ const MyAdoptionRequests = async () => {
 
                             <div className="flex items-center gap-4">
 
-                              {
-                                request.image && (
-
-                                  <img
-                                    src={request.image}
-                                    alt={request.name}
-                                    className="w-16 h-16 rounded-2xl object-cover border border-pink-100 dark:border-gray-700"
-                                  />
-
-                                )
-                              }
+                              <img
+                                src={request.petImage}
+                                alt={request.petName}
+                                className="w-16 h-16 rounded-2xl object-cover"
+                              />
 
                               <div>
 
-                                <h2 className="font-bold text-lg text-gray-900 dark:text-white">
-                                  {request.name}
+                                <h2 className="font-bold text-lg text-black dark:text-white">
+                                  {request.petName}
                                 </h2>
 
                                 <p className="text-gray-500 dark:text-gray-300 text-sm">
@@ -193,10 +251,8 @@ const MyAdoptionRequests = async () => {
                           </td>
 
                           {/* PICKUP */}
-                          <td className="px-6 py-5 text-gray-600 dark:text-gray-300">
-
+                          <td className="px-6 py-5 text-gray-700 dark:text-gray-300">
                             {request.pickupDate}
-
                           </td>
 
                           {/* STATUS */}
@@ -217,7 +273,7 @@ const MyAdoptionRequests = async () => {
 
                               <Link href={`/petnestdetails/${request.petId}`}>
 
-                                <button className="flex items-center gap-2 bg-gray-100 dark:bg-[#0f172a] dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 px-5 py-2 rounded-full transition-all duration-300">
+                                <button className="flex items-center gap-2 bg-gray-100 dark:bg-[#0f172a] text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-800 px-5 py-2 rounded-full transition-all duration-300">
 
                                   <FiEye />
 
@@ -227,8 +283,8 @@ const MyAdoptionRequests = async () => {
 
                               </Link>
 
-                              {/* CANCEL BUTTON */}
-                              <CancelButton request={request} />
+                               {/* CANCEL BUTTON */}
+                            <CancelButton request={request} />
 
                             </div>
 

@@ -110,11 +110,11 @@ const Navbar = () => {
 
                                     {/* AVATAR */}
                                     <li>
-
-                                        <Avatar referrerPolicy='no-referrer'
+                                    {console.log(user.image)}
+                                        <Image width={20} height={20}                                        
                                             src={user?.image}
-                                            name={user?.name}
-                                            className='w-12 h-12 border-2 border-pink-400'
+                                            alt={user?.name}
+                                            className='w-12 h-12 border-2 rounded-full border-pink-400'
                                         />
 
                                     </li>

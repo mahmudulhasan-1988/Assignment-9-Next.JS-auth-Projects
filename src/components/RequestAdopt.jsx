@@ -91,7 +91,7 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
   return (
     <div className="max-w-7xl mx-auto h-full">
-      <div className="bg-white dark:bg-[#111827] border border-gray-200 dark:border-gray-700 p-8 shadow-xl sticky top-10 rounded-2xl transition-all duration-300 text-black dark:text-white">
+      <div className=" dark:bg-[#111827] border border-gray-200 dark:border-gray-700 p-8 shadow-xl sticky top-10 rounded-2xl transition-all duration-300   text-black dark:text-white bg-white">
 
         {/* TITLE */}
         <div className="flex items-center gap-3 mb-4">
@@ -115,8 +115,10 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
           {/* PET NAME */}
           <div>
-            <label className="block mb-2 font-semibold text-black dark:text-white text-sm">
+              <label className="block mb-2 text-foreground  dark:text-white">
+                <h2 className="font-semibold dark:text-white text-black">
               Pet Name
+                </h2>
             </label>
 
             <input

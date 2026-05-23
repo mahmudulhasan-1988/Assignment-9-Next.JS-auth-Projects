@@ -118,10 +118,10 @@ const EditPetModal = ({ addPetNestDetail }) => {
       <Button
         variant="outline"
         onPress={() => setIsOpen(true)}
-        className="bg-white border-pink-300 text-pink-500 hover:bg-pink-500 hover:text-white rounded-full transition-all duration-300"
+        className="bg-white dark:bg-[#111827] border-pink-300 text-pink-500 hover:bg-pink-500 hover:text-white rounded-full transition-all duration-300"
       >
 
-        <BiEdit className="text-lg" />
+        <BiEdit className="text-lg " />
 
         Edit Pet
 
@@ -142,7 +142,7 @@ const EditPetModal = ({ addPetNestDetail }) => {
           <Modal.Dialog className="sm:max-w-4xl rounded-[30px] overflow-hidden bg-gradient-to-br from-[#fff7fb] via-white to-[#f8fdff] border border-pink-100 shadow-2xl">
 
             {/* ANIMAL BACKGROUND */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute inset-0 overflow-hidden pointer-events-none bg-white/90 dark:bg-black backdrop-blur-md border border-pink-100 shadow-2xl rounded-[30px]">
 
               <FaPaw className="absolute top-10 left-10 text-pink-100 text-7xl animate-bounce" />
 
@@ -159,7 +159,7 @@ const EditPetModal = ({ addPetNestDetail }) => {
             </div>
 
             {/* HEADER */}
-            <Modal.Header className="relative z-10 border-b border-pink-100 bg-white/70 backdrop-blur-md">
+            <Modal.Header className="relative z-10     ">
 
               <Modal.Icon className="bg-pink-100 text-pink-500">
 
@@ -167,9 +167,9 @@ const EditPetModal = ({ addPetNestDetail }) => {
 
               </Modal.Icon>
 
-              <div>
+              <div className="">
 
-                <Modal.Heading className="text-3xl font-extrabold text-gray-900">
+                <Modal.Heading className="text-3xl font-extrabold text-gray-900 dark:text-white  ">
 
                   Edit Pet Nest
 
