@@ -28,7 +28,7 @@ const AllPetNestCardPage = () => {
   // FETCH DATA
   useEffect(() => {
 
-    fetch(`http://localhost:2080/addPetNestDetail`)
+    fetch(`https://assignment-9-next-js-auth-server.vercel.app/addPetNestDetail`)
       .then((res) => res.json())
       .then((data) => setPets(data));
 

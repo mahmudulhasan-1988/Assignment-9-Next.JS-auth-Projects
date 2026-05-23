@@ -21,7 +21,7 @@ const PetDetailsPage = async ({ params }) => {
 
   const res = await fetch(
     // `${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail/${id}`,
-   `http://localhost:2080/addPetNestDetail/${id}`,
+   `https://assignment-9-next-js-auth-server.vercel.app/addPetNestDetail/${id}`,
     {
       headers:{
         authorization: `Bearer ${token}`
