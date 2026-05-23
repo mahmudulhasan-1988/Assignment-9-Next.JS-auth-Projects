@@ -14,7 +14,7 @@ const PetDetailsPage = async ({ params }) => {
   const { id } = await params;
 
   const res = await fetch(
-    `http://localhost:2080/addPetNestDetail/${id}`,
+    `${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail/${id}`,
     {
       headers:{
         authorization: "logged in"

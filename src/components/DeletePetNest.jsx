@@ -7,7 +7,7 @@ import { redirect } from "next/navigation";
 export function DeletePetNestAlert({addPetNestDetail}) {
     const {_id, Name} = addPetNestDetail;
     const handleDelete = async () => {
-        const res = await fetch(`http://localhost:2080/addPetNestDetail/${_id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail/${_id}`, {
             method: 'DELETE',
             headers: {
                 "content-type": "application/json"

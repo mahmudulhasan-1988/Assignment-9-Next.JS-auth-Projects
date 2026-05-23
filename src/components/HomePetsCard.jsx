@@ -10,7 +10,7 @@ import { FaPaw } from "react-icons/fa";
 
 const PetsCard = async () => {
 
-    const res = await fetch('http://localhost:2080/addPetNestDetail', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail`, {
         cache: "no-store"
     });
 

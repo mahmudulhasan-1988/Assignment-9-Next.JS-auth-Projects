@@ -65,7 +65,7 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
     try {
       const res = await fetch(
-        "http://localhost:2080/adoptionRequests",
+        `${process.env.NEXT_PUBLIC_SERVER_API}/adoptionRequests`,
         {
           method: "POST",
           headers: {

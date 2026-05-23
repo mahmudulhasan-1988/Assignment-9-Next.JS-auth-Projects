@@ -29,7 +29,7 @@ const MyAdoptionRequests = async () => {
   if (userId) {
 
     const res = await fetch(
-      `http://localhost:2080/adoptionRequests/${userId}`,
+      `${process.env.NEXT_PUBLIC_SERVER_API}/adoptionRequests/${userId}`,
       {
         cache: "no-store",
       }

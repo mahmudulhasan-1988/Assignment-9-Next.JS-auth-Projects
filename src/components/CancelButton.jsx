@@ -11,7 +11,7 @@ const CancelButton = ({ request }) => {
 
   const handleCancel = async () => {
     try {
-      await fetch(`http://localhost:2080/adoptionRequests/${request._id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_SERVER_API}/adoptionRequests/${request._id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ canceled: true, status: "Canceled" }),

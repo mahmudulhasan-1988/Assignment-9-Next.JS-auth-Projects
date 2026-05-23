@@ -28,7 +28,7 @@ const AllPetNestCardPage = () => {
   // FETCH DATA
   useEffect(() => {
 
-    fetch("http://localhost:2080/addPetNestDetail")
+    fetch(`${process.env.NEXT_PUBLIC_SERVER_API}addPetNestDetail`)
       .then((res) => res.json())
       .then((data) => setPets(data));
 
