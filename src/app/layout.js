@@ -28,7 +28,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${josefin.className} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-white dark:bg-gray-900 transition-all duration-300">
+      <body className=" min-h-full flex flex-col bg-white dark:bg-gray-900 transition-all duration-300">
         <Navbar></Navbar>
         <LenisProvider>
         {children}
