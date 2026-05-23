@@ -16,6 +16,9 @@ const PetDetailsPage = async ({ params }) => {
   const res = await fetch(
     `http://localhost:2080/addPetNestDetail/${id}`,
     {
+      headers:{
+        authorization: "logged in"
+      },
       cache: "no-store",
     }
   );
@@ -23,7 +26,7 @@ const PetDetailsPage = async ({ params }) => {
   const addPetNestDetail = await res.json();
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fff7fb] via-[#ffffff] to-[#fdfdfd] text-[#0f172a] px-4 lg:px-10 py-8">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fff7fb] via-[#ffffff] to-[#fdfdfd] dark:from-[#09142b] dark:via-[#0f172a] dark:to-[#111827] text-black dark:text-white px-4 lg:px-10 py-8 transition-all duration-300 ">
       
       {/* BACKGROUND ANIMATION */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -48,7 +51,7 @@ const PetDetailsPage = async ({ params }) => {
           
           <Link
             href="/all-petnestcard"
-            className="inline-flex items-center gap-2 text-[#0f172a] hover:text-pink-500 transition-all duration-300 font-semibold"
+            className="inline-flex items-center gap-2 text-[#0f172a] dark:text-white hover:text-pink-500 transition-all duration-300 font-semibold"
           >
             <IoArrowBack className="text-lg" />
             Back to All Pets
@@ -109,7 +112,7 @@ const PetDetailsPage = async ({ params }) => {
               </div>
 
               <div className="md:text-right">
-                <p className="text-gray-500 text-base">
+                <p className="text-gray-500 dark:text-gray-300 text-base">
                   Adoption Fee
                 </p>
 

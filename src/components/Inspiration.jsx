@@ -42,39 +42,47 @@ const Inspiration = () => {
       }
     );
 
+    return () => {
+      lenis.destroy();
+    };
+
   }, []);
 
   return (
 
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-24 bg-gradient-to-br from-[#fffdfd] via-[#fff5f7] to-[#f0fdfa]"
+      className="relative overflow-hidden py-24 
+      bg-gradient-to-br 
+      from-[#fffdfd] via-[#fff5f7] to-[#f0fdfa]
+      dark:from-[#09142b] dark:via-[#0f172a] dark:to-[#111827]
+      transition-all duration-500"
     >
 
       {/* LIGHT ANIMAL BACKGROUND ANIMATION */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
         {/* PAW ICONS */}
-        <FaPaw className="absolute top-10 left-10 text-pink-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute top-10 left-10 text-pink-100 dark:text-pink-900 text-7xl animate-bounce" />
 
-        <FaPaw className="absolute top-32 right-16 text-cyan-100 text-6xl animate-pulse" />
+        <FaPaw className="absolute top-32 right-16 text-cyan-100 dark:text-cyan-900 text-6xl animate-pulse" />
 
-        <FaPaw className="absolute bottom-16 left-1/4 text-orange-100 text-8xl animate-ping opacity-40" />
+        <FaPaw className="absolute bottom-16 left-1/4 text-orange-100 dark:text-orange-900 text-8xl animate-ping opacity-40" />
 
-        <FaPaw className="absolute bottom-10 right-10 text-rose-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute bottom-10 right-10 text-rose-100 dark:text-rose-900 text-7xl animate-bounce" />
 
         {/* FLOATING DOG */}
-        <FaDog className="absolute top-1/3 left-16 text-pink-200 text-8xl animate-pulse opacity-20" />
+        <FaDog className="absolute top-1/3 left-16 text-pink-200 dark:text-pink-800 text-8xl animate-pulse opacity-20" />
 
         {/* FLOATING CAT */}
-        <FaCat className="absolute top-20 right-1/3 text-purple-200 text-7xl animate-bounce opacity-20" />
+        <FaCat className="absolute top-20 right-1/3 text-purple-200 dark:text-purple-800 text-7xl animate-bounce opacity-20" />
 
       </div>
 
       {/* SOFT GLOW EFFECTS */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200/40 blur-3xl rounded-full"></div>
+      <div className="absolute top-0 left-0 w-96 h-96 bg-pink-200/40 dark:bg-pink-900/20 blur-3xl rounded-full"></div>
 
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200/40 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200/40 dark:bg-cyan-900/20 blur-3xl rounded-full"></div>
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -83,13 +91,13 @@ const Inspiration = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
           {/* LEFT CONTENT */}
-          <div className="text-gray-800">
+          <div className="text-black dark:text-white transition-all duration-500">
 
-            <span className="inline-block bg-pink-100 border border-pink-200 text-pink-500 px-6 py-3 rounded-full text-sm font-semibold tracking-[3px] uppercase">
+            <span className="inline-block bg-pink-100 dark:bg-pink-900/30 border border-pink-200 dark:border-pink-800 text-pink-500 px-6 py-3 rounded-full text-sm font-semibold tracking-[3px] uppercase">
               Pet Adoption Inspiration
             </span>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight mt-8 text-gray-900 dark:text-white">
 
               Find Your Perfect <br />
 
@@ -103,7 +111,7 @@ const Inspiration = () => {
               Adopt, Don&apos;t Shop
             </p>
 
-            <p className="mt-8 text-lg md:text-xl text-gray-600 leading-9 max-w-2xl">
+            <p className="mt-8 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-9 max-w-2xl">
               At FourPow, we believe every rescued pet deserves a loving
               forever home. Open your heart to unconditional love and
               experience the happiness that comes from adoption.
@@ -126,7 +134,7 @@ const Inspiration = () => {
           <div className="relative flex justify-center">
 
             {/* GLOW */}
-            <div className="absolute w-72 h-72 bg-pink-200 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute w-72 h-72 bg-pink-200 dark:bg-pink-900 rounded-full blur-3xl animate-pulse"></div>
 
             <Image
               src="/images/pet3.jpg"
@@ -147,11 +155,11 @@ const Inspiration = () => {
             Why People Choose Adoption
           </p>
 
-          <h2 className="text-4xl md:text-6xl font-black text-gray-800 mt-4">
+          <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mt-4">
             Why Adopt?
           </h2>
 
-          <p className="mt-6 text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="mt-6 text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Discover how adopting a pet changes lives forever — both yours
             and theirs.
           </p>
@@ -162,13 +170,13 @@ const Inspiration = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
           {/* CARD 1 */}
-          <div className="bg-white/80 backdrop-blur-xl border border-pink-100 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
+          <div className="bg-white/80 dark:bg-[#111827]/80 backdrop-blur-xl border border-pink-100 dark:border-pink-900 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
 
             <h3 className="text-2xl font-bold text-pink-500 mb-5">
               Change a Life
             </h3>
 
-            <p className="text-gray-600 leading-8">
+            <p className="text-gray-600 dark:text-gray-300 leading-8">
               Every adoption saves a rescued animal and gives them a second
               chance at a safe, happy, and loving future.
             </p>
@@ -176,13 +184,13 @@ const Inspiration = () => {
           </div>
 
           {/* CARD 2 */}
-          <div className="bg-white/80 backdrop-blur-xl border border-cyan-100 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
+          <div className="bg-white/80 dark:bg-[#111827]/80 backdrop-blur-xl border border-cyan-100 dark:border-cyan-900 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
 
             <h3 className="text-2xl font-bold text-pink-500 mb-5">
               Unconditional Love
             </h3>
 
-            <p className="text-gray-600 leading-8">
+            <p className="text-gray-600 dark:text-gray-300 leading-8">
               Adopted pets build deep emotional bonds and bring endless joy,
               comfort, and companionship into your home.
             </p>
@@ -190,13 +198,13 @@ const Inspiration = () => {
           </div>
 
           {/* CARD 3 */}
-          <div className="bg-white/80 backdrop-blur-xl border border-rose-100 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
+          <div className="bg-white/80 dark:bg-[#111827]/80 backdrop-blur-xl border border-rose-100 dark:border-rose-900 p-8 rounded-3xl hover:-translate-y-3 transition-all duration-500 shadow-2xl">
 
             <h3 className="text-2xl font-bold text-pink-500 mb-5">
               Endless Variety
             </h3>
 
-            <p className="text-gray-600 leading-8">
+            <p className="text-gray-600 dark:text-gray-300 leading-8">
               Discover playful puppies, loyal dogs, calm cats, and many
               other wonderful companions waiting for a forever home.
             </p>

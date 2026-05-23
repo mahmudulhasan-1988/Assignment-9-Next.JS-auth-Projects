@@ -42,32 +42,39 @@ const Action = () => {
       }
     );
 
+    return () => {
+      lenis.destroy();
+    };
+
   }, []);
 
   return (
 
     <section
       ref={sectionRef}
-      className="relative overflow-hidden py-24 bg-gradient-to-br from-[#fffdfd] via-[#fff5f7] to-[#fefce8]"
+      className="relative overflow-hidden py-24 bg-gradient-to-br 
+      from-[#fffdfd] via-[#fff5f7] to-[#fefce8]
+      dark:from-[#09142b] dark:via-[#0f172a] dark:to-[#111827]
+      transition-all duration-500"
     >
 
       {/* LIGHT ANIMAL BACKGROUND ANIMATION */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
         {/* PAW ICONS */}
-        <FaPaw className="absolute top-10 left-10 text-pink-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute top-10 left-10 text-pink-100 dark:text-pink-900 text-7xl animate-bounce" />
 
-        <FaPaw className="absolute top-40 right-20 text-orange-100 text-6xl animate-pulse" />
+        <FaPaw className="absolute top-40 right-20 text-orange-100 dark:text-orange-900 text-6xl animate-pulse" />
 
-        <FaPaw className="absolute bottom-16 left-1/4 text-cyan-100 text-8xl animate-ping opacity-50" />
+        <FaPaw className="absolute bottom-16 left-1/4 text-cyan-100 dark:text-cyan-900 text-8xl animate-ping opacity-50" />
 
-        <FaPaw className="absolute bottom-10 right-10 text-rose-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute bottom-10 right-10 text-rose-100 dark:text-rose-900 text-7xl animate-bounce" />
 
         {/* FLOATING DOG */}
-        <FaDog className="absolute top-1/2 left-12 text-pink-200 text-8xl animate-pulse opacity-20" />
+        <FaDog className="absolute top-1/2 left-12 text-pink-200 dark:text-pink-800 text-8xl animate-pulse opacity-20" />
 
         {/* FLOATING CAT */}
-        <FaCat className="absolute top-20 right-1/3 text-purple-200 text-7xl animate-bounce opacity-20" />
+        <FaCat className="absolute top-20 right-1/3 text-purple-200 dark:text-purple-800 text-7xl animate-bounce opacity-20" />
 
       </div>
 
@@ -85,7 +92,7 @@ const Action = () => {
           <div className="relative flex justify-center">
 
             {/* Animated Circle */}
-            <div className="absolute w-72 h-72 bg-pink-200 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute w-72 h-72 bg-pink-200 dark:bg-pink-900 rounded-full blur-3xl animate-pulse"></div>
 
             <Image
               src="/images/adoptme.png"
@@ -98,13 +105,13 @@ const Action = () => {
           </div>
 
           {/* RIGHT CONTENT */}
-          <div className="text-gray-800">
+          <div className="text-black dark:text-white transition-all duration-500">
 
             <p className="uppercase tracking-[6px] text-pink-500 font-semibold mb-4">
               Save Lives With Love
             </p>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight text-gray-900 dark:text-white">
 
               Save A Pet <br />
 
@@ -114,7 +121,7 @@ const Action = () => {
 
             </h1>
 
-            <p className="mt-8 text-lg md:text-xl text-gray-600 leading-9">
+            <p className="mt-8 text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-9">
               Every rescued pet deserves a second chance at happiness.
               Your donation helps provide shelter, food, medical care,
               and loving homes for abandoned animals.
@@ -136,9 +143,9 @@ const Action = () => {
             {/* BOTTOM LINE */}
             <div className="mt-12 space-y-3">
 
-              <hr className="border-pink-300" />
+              <hr className="border-pink-300 dark:border-pink-700" />
 
-              <hr className="border-gray-200" />
+              <hr className="border-gray-200 dark:border-gray-700" />
 
             </div>
 

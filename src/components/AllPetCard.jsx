@@ -23,7 +23,7 @@ const AllPetNestCard = ({ addPetNest }) => {
 
   return (
 
-    <div className="relative group bg-white rounded-[22px] overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+    <div className="relative group bg-white rounded-[22px] overflow-hidden border border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 dark:bg-[#09142b]">
 
       {/* LIGHT ANIMAL BACKGROUND ANIMATION */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">

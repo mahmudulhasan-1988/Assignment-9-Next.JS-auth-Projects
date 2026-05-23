@@ -1,5 +1,20 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
+  transition: background-color 0.3s ease;
+}
+
+body {
+  background: white;
+  color: black;
   transition: all 0.3s ease;
+}
+
+html.dark body {
+  background: #0b1120;
+  color: white;
 }

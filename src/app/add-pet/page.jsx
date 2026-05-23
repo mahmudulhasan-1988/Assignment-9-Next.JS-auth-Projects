@@ -12,8 +12,6 @@ import {
   Card,
 } from "@heroui/react";
 
-import { useEffect } from "react";
-
 import { FaPaw, FaDog, FaCat } from "react-icons/fa";
 import { MdPets } from "react-icons/md";
 
@@ -27,8 +25,6 @@ const AddPetDetailsPage = () => {
     const formData = new FormData(e.currentTarget);
 
     const petDetailsData = Object.fromEntries(formData.entries());
-
-    console.log(petDetailsData);
 
     try {
 
@@ -44,8 +40,6 @@ const AddPetDetailsPage = () => {
       );
 
       const data = await res.json();
-
-      console.log(data);
 
       if (data.insertedId) {
 
@@ -65,26 +59,26 @@ const AddPetDetailsPage = () => {
 
   return (
 
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fff7fb] via-white to-[#f8fdff] px-5 lg:px-10 py-16">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-[#fff7fb] via-white to-[#f8fdff] dark:from-[#09142b] dark:via-[#0f172a] dark:to-[#111827] transition-all duration-300 px-5 lg:px-10 py-16">
 
       {/* BACKGROUND ANIMAL ANIMATION */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
 
-        <FaPaw className="absolute top-10 left-10 text-pink-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute top-10 left-10 text-pink-100 dark:text-pink-900 text-7xl animate-bounce" />
 
-        <FaPaw className="absolute top-32 right-20 text-cyan-100 text-6xl animate-pulse" />
+        <FaPaw className="absolute top-32 right-20 text-cyan-100 dark:text-cyan-900 text-6xl animate-pulse" />
 
-        <FaPaw className="absolute bottom-20 left-1/4 text-orange-100 text-8xl animate-ping opacity-40" />
+        <FaPaw className="absolute bottom-20 left-1/4 text-orange-100 dark:text-orange-900 text-8xl animate-ping opacity-40" />
 
-        <FaPaw className="absolute bottom-10 right-10 text-rose-100 text-7xl animate-bounce" />
+        <FaPaw className="absolute bottom-10 right-10 text-rose-100 dark:text-rose-900 text-7xl animate-bounce" />
 
-        <FaDog className="absolute top-1/3 left-16 text-pink-200 text-8xl animate-pulse opacity-20" />
+        <FaDog className="absolute top-1/3 left-16 text-pink-200 dark:text-pink-800 text-8xl animate-pulse opacity-20" />
 
-        <FaCat className="absolute top-20 right-1/3 text-purple-200 text-7xl animate-bounce opacity-20" />
+        <FaCat className="absolute top-20 right-1/3 text-purple-200 dark:text-purple-800 text-7xl animate-bounce opacity-20" />
 
-        <FaDog className="absolute bottom-24 right-1/4 text-cyan-100 text-7xl animate-pulse opacity-20" />
+        <FaDog className="absolute bottom-24 right-1/4 text-cyan-100 dark:text-cyan-800 text-7xl animate-pulse opacity-20" />
 
-        <MdPets className="absolute top-1/2 left-1/2 text-pink-100 text-9xl animate-pulse opacity-10" />
+        <MdPets className="absolute top-1/2 left-1/2 text-pink-100 dark:text-pink-900 text-9xl animate-pulse opacity-10" />
 
       </div>
 
@@ -94,7 +88,7 @@ const AddPetDetailsPage = () => {
         {/* HEADER */}
         <div className="text-center mb-12">
 
-          <div className="inline-flex items-center gap-2 bg-pink-50 border border-pink-200 px-5 py-2 rounded-full shadow-sm">
+          <div className="inline-flex items-center gap-2 bg-pink-50 dark:bg-[#1e293b] border border-pink-200 dark:border-gray-700 px-5 py-2 rounded-full shadow-sm">
 
             <MdPets className="text-pink-500 text-lg" />
 
@@ -104,17 +98,17 @@ const AddPetDetailsPage = () => {
 
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-gray-900 leading-tight">
+          <h1 className="text-4xl md:text-5xl font-extrabold mt-6 text-black dark:text-white leading-tight">
 
             Add Pet{" "}
 
-            <span className="bg-gradient-to-r text-[#ff6b6b] bg-clip-text ">
+            <span className="text-[#ff6b6b]">
               Details
             </span>
 
           </h1>
 
-          <p className="text-gray-500 mt-5 max-w-2xl mx-auto text-lg leading-8">
+          <p className="text-gray-600 dark:text-gray-300 mt-5 max-w-2xl mx-auto text-lg leading-8">
 
             Add your lovely pet information and help them find a caring forever home through Pets Nest.
 
@@ -123,7 +117,7 @@ const AddPetDetailsPage = () => {
         </div>
 
         {/* FORM CARD */}
-        <Card className="bg-white/90 backdrop-blur-md border border-pink-100 shadow-2xl rounded-[30px] overflow-hidden">
+        <Card className="bg-white/90 dark:bg-[#111827]/90 backdrop-blur-md border border-pink-100 dark:border-gray-700 shadow-2xl rounded-[30px] overflow-hidden">
 
           <form
             onSubmit={onSubmit}
@@ -135,11 +129,13 @@ const AddPetDetailsPage = () => {
               {/* PET NAME */}
               <TextField name="name" isRequired>
 
-                <Label>Pet Name</Label>
+                <Label className="text-black dark:text-white">
+                  Pet Name
+                </Label>
 
                 <Input
                   placeholder="Pet Name"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -149,11 +145,13 @@ const AddPetDetailsPage = () => {
               {/* BREED */}
               <TextField name="breed" isRequired>
 
-                <Label>Breed</Label>
+                <Label className="text-black dark:text-white">
+                  Breed
+                </Label>
 
                 <Input
                   placeholder="Breed"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -163,11 +161,13 @@ const AddPetDetailsPage = () => {
               {/* AGE */}
               <TextField name="age" isRequired>
 
-                <Label>Age</Label>
+                <Label className="text-black dark:text-white">
+                  Age
+                </Label>
 
                 <Input
                   placeholder="Age"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -177,7 +177,7 @@ const AddPetDetailsPage = () => {
               {/* GENDER */}
               <div>
 
-                <Label className="mb-2 block">
+                <Label className="mb-2 block text-black dark:text-white">
                   Gender
                 </Label>
 
@@ -187,7 +187,7 @@ const AddPetDetailsPage = () => {
                   placeholder="Select gender"
                 >
 
-                  <Select.Trigger className="rounded-2xl">
+                  <Select.Trigger className="rounded-2xl text-black dark:text-white bg-white dark:bg-[#1e293b]">
 
                     <Select.Value />
 
@@ -218,7 +218,7 @@ const AddPetDetailsPage = () => {
               {/* SPECIES */}
               <div>
 
-                <Label className="mb-2 block">
+                <Label className="mb-2 block text-black dark:text-white">
                   Species
                 </Label>
 
@@ -228,7 +228,7 @@ const AddPetDetailsPage = () => {
                   placeholder="Select species"
                 >
 
-                  <Select.Trigger className="rounded-2xl">
+                  <Select.Trigger className="rounded-2xl text-black dark:text-white bg-white dark:bg-[#1e293b]">
 
                     <Select.Value />
 
@@ -260,6 +260,10 @@ const AddPetDetailsPage = () => {
                         Turtle
                       </ListBox.Item>
 
+                      <ListBox.Item id="Tiger" textValue="Tiger">
+                        Tiger
+                      </ListBox.Item>
+
                     </ListBox>
 
                   </Select.Popover>
@@ -275,12 +279,14 @@ const AddPetDetailsPage = () => {
                 isRequired
               >
 
-                <Label>Adoption Fee</Label>
+                <Label className="text-black dark:text-white">
+                  Adoption Fee
+                </Label>
 
                 <Input
                   type="number"
                   placeholder="100"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -290,11 +296,13 @@ const AddPetDetailsPage = () => {
               {/* HEALTH */}
               <TextField name="health" isRequired>
 
-                <Label>Health Status</Label>
+                <Label className="text-black dark:text-white">
+                  Health Status
+                </Label>
 
                 <Input
                   placeholder="Healthy"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -304,11 +312,13 @@ const AddPetDetailsPage = () => {
               {/* VACCINATION */}
               <TextField name="vaccinated" isRequired>
 
-                <Label>Vaccination Status</Label>
+                <Label className="text-black dark:text-white">
+                  Vaccination Status
+                </Label>
 
                 <Input
                   placeholder="Vaccinated"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -318,11 +328,13 @@ const AddPetDetailsPage = () => {
               {/* STATUS */}
               <TextField name="status" isRequired>
 
-                <Label>Status</Label>
+                <Label className="text-black dark:text-white">
+                  Status
+                </Label>
 
                 <Input
                   placeholder="Available"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -332,11 +344,13 @@ const AddPetDetailsPage = () => {
               {/* LOCATION */}
               <TextField name="location" isRequired>
 
-                <Label>Location</Label>
+                <Label className="text-black dark:text-white">
+                  Location
+                </Label>
 
                 <Input
                   placeholder="Dhaka, Bangladesh"
-                  className="rounded-2xl"
+                  className="rounded-2xl text-black dark:text-white"
                 />
 
                 <FieldError />
@@ -348,12 +362,14 @@ const AddPetDetailsPage = () => {
 
                 <TextField name="image" isRequired>
 
-                  <Label>Image URL</Label>
+                  <Label className="text-black dark:text-white">
+                    Image URL
+                  </Label>
 
                   <Input
                     type="url"
                     placeholder="https://example.com/pet.jpg"
-                    className="rounded-2xl"
+                    className="rounded-2xl text-black dark:text-white"
                   />
 
                   <FieldError />
@@ -367,11 +383,13 @@ const AddPetDetailsPage = () => {
 
                 <TextField name="description" isRequired>
 
-                  <Label>Description</Label>
+                  <Label className="text-black dark:text-white">
+                    Description
+                  </Label>
 
                   <TextArea
                     placeholder="Write pet description..."
-                    className="rounded-3xl"
+                    className="rounded-3xl text-black dark:text-white"
                   />
 
                   <FieldError />
@@ -385,11 +403,13 @@ const AddPetDetailsPage = () => {
 
                 <TextField name="email" isRequired>
 
-                  <Label>Owner Email</Label>
+                  <Label className="text-black dark:text-white">
+                    Owner Email
+                  </Label>
 
                   <Input
                     placeholder="owner@gmail.com"
-                    className="rounded-2xl"
+                    className="rounded-2xl text-black dark:text-white"
                   />
 
                   <FieldError />
@@ -403,7 +423,8 @@ const AddPetDetailsPage = () => {
             {/* BUTTON */}
             <Button
               type="submit"
-              className=" group bg-[#ff6b6b] hover:bg-[#ff5252] transition-all duration-300 text-white px-10 py-5 rounded-full text-lg font-bold shadow-[0_10px_40px_rgba(212,42,92,0.5)] flex items-center w-full gap-3">
+              className="group bg-[#ff6b6b] hover:bg-[#ff5252] transition-all duration-300 text-white px-10 py-5 rounded-full text-lg font-bold shadow-[0_10px_40px_rgba(212,42,92,0.5)] flex items-center w-full gap-3"
+            >
 
               Add Pet
 
