@@ -79,7 +79,7 @@ const RequestAdopt = ({ addPetNestDetail }) => {
 
       if (data.insertedId) {
         toast.success("Request Sent Successfully");
-        router.push("/my-requests");
+        router.push("/dashboard/my-requests");
       }
     } catch (error) {
       console.log(error);

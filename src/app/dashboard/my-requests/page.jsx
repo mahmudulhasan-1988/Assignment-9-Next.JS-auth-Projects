@@ -29,7 +29,6 @@ const MyAdoptionRequests = async () => {
   let requests = [];
 
   if (userId) {
-
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_API}/adoptionRequests/${userId}`,
       {

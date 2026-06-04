@@ -29,7 +29,7 @@ const AddPetDetailsPage = () => {
     try {
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_SERVER_API}/addPetNestDetail`,
+        `${process.env.NEXT_PUBLIC_SERVER_API}/adoptionRequests`,
         {
           method: "POST",
           headers: {

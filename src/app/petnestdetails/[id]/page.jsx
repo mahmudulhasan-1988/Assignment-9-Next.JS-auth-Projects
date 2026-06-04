@@ -58,7 +58,7 @@ const PetDetailsPage = async ({ params }) => {
           
           <Link
             href="/all-petnestcard"
-            className="inline-flex items-center gap-2 text-[#0f172a] dark:text-white hover:text-pink-500 transition-all duration-300 font-semibold"
+            className="inline-flex items-center gap-2 hover:text-pink-500 transition-all duration-300 font-semibold"
           >
             <IoArrowBack className="text-lg" />
             Back to All Pets
